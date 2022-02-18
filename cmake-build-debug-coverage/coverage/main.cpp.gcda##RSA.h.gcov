@@ -1,0 +1,309 @@
+        -:    0:Source:D:/RSA/RSA.h
+        -:    0:Graph:D:\RSA\cmake-build-debug-coverage\CMakeFiles\RSA.dir\main.cpp.gcno
+        -:    0:Data:D:\RSA\cmake-build-debug-coverage\CMakeFiles\RSA.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#pragma once
+        -:    2:#include <iostream>
+        -:    3:#include <cmath>
+        -:    4:using namespace std;
+        -:    5:
+function _Z5primex called 0 returned 0% blocks executed 0%
+    #####:    6:bool prime(long long pr){
+    #####:    7:    for (int i = 2; i <= sqrt(pr); i++){
+    %%%%%:    7-block  0
+    %%%%%:    7-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:    7-block  2
+    #####:    8:        if (pr % i == 0)
+    %%%%%:    8-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:    9:            return false;
+    %%%%%:    9-block  0
+        -:   10:    }
+    #####:   11:    return true;
+    %%%%%:   11-block  0
+        -:   12:}
+        -:   13:
+function _Z3gcdxx called 0 returned 0% blocks executed 0%
+    #####:   14:long long gcd(long long a, long long b){ // Euclid's algorithm
+    #####:   15:    return b!=0 ? gcd(b, a%b) : a;
+    %%%%%:   15-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   15-block  1
+call    2 never executed
+    %%%%%:   15-block  2
+    %%%%%:   15-block  3
+        -:   16:}
+        -:   17:
+function _Z20privateKeyGenerationRxS_ called 0 returned 0% blocks executed 0%
+    #####:   18:long long privateKeyGeneration(long long &m, long long &e){
+    #####:   19:    double k=1;
+    %%%%%:   19-block  0
+        -:   20:    while (true){
+    #####:   21:        double d=(k*m+1)/e;
+    #####:   22:        if (d == int(d)){
+    %%%%%:   22-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   23:            return d;
+    %%%%%:   23-block  0
+        -:   24:        }
+    #####:   25:        k++;
+    #####:   26:    }
+    %%%%%:   26-block  0
+        -:   27:}
+        -:   28:
+function _Z19publicKeyGenerationRxS_ called 0 returned 0% blocks executed 0%
+    #####:   29:long long publicKeyGeneration(long long &n, long long &m){
+    #####:   30:    for(int e=3; e<n; ++e){
+    %%%%%:   30-block  0
+    %%%%%:   30-block  1
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   30-block  2
+    #####:   31:        if (gcd(e, m)==1){
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   32:            return e;
+    %%%%%:   32-block  0
+        -:   33:        }
+        -:   34:    }
+    #####:   35:    exit('1');
+    %%%%%:   35-block  0
+call    0 never executed
+        -:   36:}
+        -:   37:
+function _Z7encryptRxS_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   38:void encrypt(long long &e, long long &n, string &message){
+    #####:   39:    string encrypted;
+    %%%%%:   39-block  0
+call    0 never executed
+    %%%%%:   39-block  1
+call    1 never executed
+    $$$$$:   39-block  2
+call    2 never executed
+    #####:   40:    for (int i=0; i<message.size(); ++i) {
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   40-block  1
+    #####:   41:        unsigned char temp1 = message[i];
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   42:        long long symbol = temp1, multipl = temp1;
+    #####:   43:        for (int i=0; i<e-1; ++i){
+    %%%%%:   43-block  0
+    %%%%%:   43-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   44:            symbol *= multipl;
+    #####:   45:            symbol %= n;
+    %%%%%:   45-block  0
+        -:   46:        }
+    #####:   47:        temp1 = symbol;
+    #####:   48:        encrypted.push_back(temp1);
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   49:    }
+    #####:   50:    cout << "\nThe encrypted message is:\n";
+    %%%%%:   50-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   51:    cout << encrypted;
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   52:    message=encrypted;
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   53:}
+        -:   54:
+function _Z7decryptRxS_RNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   55:void decrypt(long long &d, long long &n, string &encryptedMessage){
+    #####:   56:    string decrypted;
+    %%%%%:   56-block  0
+call    0 never executed
+    %%%%%:   56-block  1
+call    1 never executed
+    $$$$$:   56-block  2
+call    2 never executed
+    #####:   57:    for (int i=0; i<encryptedMessage.size(); ++i){
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   57-block  1
+    #####:   58:        unsigned char temp1 = encryptedMessage[i];
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   59:        long long symbol = temp1, multipl = temp1;
+    #####:   60:        for (int j = 0; j < d-1; ++j) {
+    %%%%%:   60-block  0
+    %%%%%:   60-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   61:            symbol *= multipl;
+    #####:   62:            symbol %= n;
+    %%%%%:   62-block  0
+        -:   63:        }
+    #####:   64:        temp1 = symbol;
+    #####:   65:        decrypted.push_back(temp1);
+    %%%%%:   65-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   66:    }
+    #####:   67:    cout << "\nThe decrypted message is:\n";
+    %%%%%:   67-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   68:    cout << decrypted;
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   69:}
+        -:   70:
+function _Z3rsav called 1 returned 0% blocks executed 10%
+        1:   71:void rsa(){
+        1:   72:    cout << "\nEnter prime number\n";
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   73:    long long p, q;
+        1:   74:    cin >> p;
+        1:   74-block  0
+call    0 returned 0
+branch  1 taken 0 (fallthrough)
+branch  2 taken 0 (throw)
+    #####:   75:    bool flag = prime(p);
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:    if (!flag){
+    %%%%%:   76-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   77:        cout << "\nWrong input\n";
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   78:        exit(1);
+    %%%%%:   78-block  0
+call    0 never executed
+        -:   79:    }
+    #####:   80:    cout << "\nEnter another prime number\n";
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   81:    cin >> q;
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:    flag = prime(q);
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   83:    if (!flag || p == q)
+    %%%%%:   83-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   83-block  1
+branch  2 never executed
+branch  3 never executed
+        -:   84:    {
+    #####:   85:        cout << "\nWrong input\n";
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   86:        exit(1);
+    %%%%%:   86-block  0
+call    0 never executed
+        -:   87:    }
+    #####:   88:    cout << "\nEnter message\n";
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:    string message;
+    %%%%%:   89-block  0
+call    0 never executed
+    %%%%%:   89-block  1
+call    1 never executed
+    $$$$$:   89-block  2
+call    2 never executed
+    #####:   90:    cin >> message;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   91:    long long n = p * q;
+    #####:   92:    long long m = (p - 1) * (q - 1); // Euler function
+    #####:   93:    long long e = publicKeyGeneration(n, m);
+    %%%%%:   93-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   94:    long long d = privateKeyGeneration(m, e);
+    %%%%%:   94-block  0
+call    0 never executed
+    #####:   95:    cout << "Private key(d): " << d << " Public key(e):" << e << " n:" <<  n;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   95-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   95-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   95-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   95-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   95-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    #####:   96:    encrypt(e, n, message);
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:    decrypt(d, n, message);
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   98:}

@@ -37,15 +37,17 @@ long long publicKeyGeneration(long long &n, long long &m){
 
 void encrypt(long long &e, long long &n, string &message){
     string encrypted;
+    cout << endl;
     for (int i=0; i<message.size(); ++i) {
-        unsigned char temp1 = message[i];
-        long long symbol = temp1, multipl = temp1;
+        unsigned char temp = message[i];
+        long long symbol = temp, multipl = temp;
         for (int i=0; i<e-1; ++i){
             symbol *= multipl;
             symbol %= n;
         }
-        temp1 = symbol;
-        encrypted.push_back(temp1);
+        temp = symbol;
+        encrypted.push_back(temp);
+        cout << int(temp) << " ";
     }
     cout << "\nThe encrypted message is:\n";
     cout << encrypted;
